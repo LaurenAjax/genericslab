@@ -112,9 +112,35 @@ public class LinkedList<T> {
     public void intersperce(T sep) {
         Node cur = this.first;
         while (cur.next != null){
-            Node newNode = new Node(sep, cur.next.next);
+            Node newNode = new Node(sep, cur.next);
             this.first.next = newNode;
             cur = cur.next.next;
         }
+    }
+    
+    /**
+     * Cannot implement maximum because it requires T to be an integer
+     * @return 
+     */
+    public T maximum() {
+        throw new UnsupportedOperationException();
+    }
+    
+    @Override
+    public String toString() {
+        String str = "[" + this.first.value;
+        for (Node cur = this.first.next; !(cur == null); cur = cur.next) {
+            str = str + ", " + cur.value;
+        }
+        str = str + "]";
+        return str;
+    }
+    
+    /**
+     * Cannot implement insertionSort because what it would sort by depends on
+     * what T is
+     */
+    public void insertionSort() {
+        throw new UnsupportedOperationException();
     }
 }
